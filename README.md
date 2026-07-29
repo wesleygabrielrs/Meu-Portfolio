@@ -1,6 +1,7 @@
 # Wesley Gabriel — Portfólio
 
 Meu portfólio pra buscar estágio em dev. Feito com Flask porque queria aprender backend na prática.
+Feito com ajuda no processo de um curso que estou fazendo, quis deixar todo o código comentado para auxilio ao navegar pelo código.
 
 🔗 **Live:** *em breve*
 
