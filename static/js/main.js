@@ -173,10 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const bar = entry.target;
                 if (bar.classList.contains('animated')) return;
                 bar.classList.add('animated');
-                // A largura já está definida pelo data-level no CSS
-                // Reaplica forçando o transition
-                const level = bar.getAttribute('data-level');
-                bar.style.width = level === 'estudando' ? '60%' : '30%';
+                // Lê a porcentagem do data-pct definido no template
+                const pct = bar.getAttribute('data-pct') || '50';
+                bar.style.width = pct + '%';
                 obs.unobserve(bar);
             });
         }, { threshold: .3 });

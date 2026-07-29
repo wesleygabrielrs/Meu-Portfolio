@@ -661,8 +661,6 @@ a:hover { color: var(--accent-hover); }
     background: linear-gradient(90deg, var(--section-accent, var(--accent)), var(--section-accent-2, var(--accent-hover)));
     transition: width .8s ease;
 }
-.hab-bar-fill[data-level="estudando"] { width: 60%; }
-.hab-bar-fill[data-level="iniciando"] { width: 30%; }
 .hab-pct {
     font-size: .72rem;
     font-weight: 600;

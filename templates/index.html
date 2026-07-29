@@ -201,9 +201,9 @@
                     <strong>{{ h.nome }}</strong>
                     <div class="hab-bar-wrapper">
                         <div class="hab-bar">
-                            <div class="hab-bar-fill" data-level="{{ h.nivel|lower }}"></div>
+                            <div class="hab-bar-fill" data-pct="{{ h.pct }}"></div>
                         </div>
-                        <span class="hab-pct">{{ '60%' if h.nivel == 'Estudando' else '30%' }}</span>
+                        <span class="hab-pct">{{ h.pct }}%</span>
                     </div>
                     <span class="hab-level {{ h.nivel|lower }}">{{ h.nivel }}</span>
                 </div>

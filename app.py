@@ -88,13 +88,12 @@ projetos = [
 ]
 
 habilidades = [
-    {'nome': 'Python',     'nivel': 'Estudando', 'icone': '🐍'},
-    {'nome': 'Flask',      'nivel': 'Iniciando', 'icone': '🌶️'},
-    {'nome': 'HTML',       'nivel': 'Estudando', 'icone': '📄'},
-    {'nome': 'CSS',        'nivel': 'Estudando', 'icone': '🎨'},
-    {'nome': 'JavaScript', 'nivel': 'Iniciando', 'icone': '⚡'},
-    {'nome': 'Git',        'nivel': 'Iniciando', 'icone': '🔄'},
-    {'nome': 'SQL',        'nivel': 'Iniciando', 'icone': '🗄️'},
+    {'nome': 'Python',     'nivel': 'Intermediário', 'icone': '🐍', 'pct': 70},
+    {'nome': 'Flask',      'nivel': 'Iniciante',     'icone': '🌶️', 'pct': 30},
+    {'nome': 'C#',         'nivel': 'Iniciante',     'icone': '🎨', 'pct': 30},
+    {'nome': 'JavaScript', 'nivel': 'Iniciante',     'icone': '⚡', 'pct': 30},
+    {'nome': 'Git',        'nivel': 'Avançado',      'icone': '🔄', 'pct': 80},
+    {'nome': 'SQL',        'nivel': 'Intermediário', 'icone': '🗄️', 'pct': 50},
 ]
 
 formacao = [
@@ -102,14 +101,14 @@ formacao = [
         'tipo': 'graduacao',
         'curso': 'Análise e Desenvolvimento de Sistemas',
         'instituicao': 'Faculdade de Tecnologia',
-        'periodo': '2025 — 2027',
+        'periodo': '2026 — 2028',
         'descricao': 'Cursando o 2º semestre.',
     },
     {
         'tipo': 'curso',
         'curso': 'Python 3 — Mundo 1, 2 e 3',
         'instituicao': 'Curso em Vídeo (Gustavo Guanabara)',
-        'periodo': '2025',
+        'periodo': '2026 — 2026',
         'descricao': 'Fundamentos da linguagem Python.',
     },
 ]
