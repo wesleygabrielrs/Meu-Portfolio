@@ -1,9 +1,21 @@
 from flask import Flask, render_template, request, jsonify
+from flask_mail import Mail, Message
 import os
 from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-key-mude-em-producao')
+
+# ─── Configuração de E-mail ──────────────────────────────
+app.config.update(
+    MAIL_SERVER=os.environ.get('MAIL_SERVER', 'smtp.gmail.com'),
+    MAIL_PORT=int(os.environ.get('MAIL_PORT', 587)),
+    MAIL_USE_TLS=os.environ.get('MAIL_USE_TLS', 'true').lower() == 'true',
+    MAIL_USERNAME=os.environ.get('MAIL_USERNAME', ''),
+    MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD', ''),
+    MAIL_DEFAULT_SENDER=os.environ.get('MAIL_USERNAME', ''),
+)
+mail = Mail(app)
 
 # ============================================================
 # DADOS DO PORTFÓLIO
@@ -127,22 +139,48 @@ def index():
 def contato():
     nome = request.form.get('nome', '').strip()
     email = request.form.get('email', '').strip()
-    assunto = request.form.get('assunto', '').strip()
+    assunto = request.form.get('assunto', '').strip() or 'Contato do Portfólio'
     mensagem = request.form.get('mensagem', '').strip()
 
     if not nome or not email or not mensagem:
         return jsonify({'ok': False, 'erro': 'Preencha nome, email e mensagem.'}), 400
 
-    # Em desenvolvimento: apenas loga no console
-    # Em produção: configurar envio de e-mail (ver README)
-    print(f'\n{'='*50}')
-    print(f'NOVO CONTATO — {datetime.now().strftime("%d/%m/%Y %H:%M")}')
-    print(f'{'='*50}')
+    destino = os.environ.get('MAIL_DESTINO', '')
+
+    if destino and app.config['MAIL_USERNAME'] and app.config['MAIL_PASSWORD']:
+        try:
+            corpo = f"""<h3>Novo contato do portfólio</h3>
+<p><strong>Nome:</strong> {nome}</p>
+<p><strong>E-mail:</strong> {email}</p>
+<p><strong>Assunto:</strong> {assunto}</p>
+<hr><p>{mensagem}</p><hr>
+<p style="color:#888;font-size:12px">Enviado por {nome} via portfólio — {datetime.now().strftime('%d/%m/%Y %H:%M')}</p>"""
+
+            msg = Message(
+                subject=f'[Portfólio] {assunto}',
+                recipients=[destino],
+                html=corpo,
+                reply_to=email,
+            )
+            mail.send(msg)
+            print(f'\nE-mail enviado para {destino} — assunto: {assunto}')
+            return jsonify({
+                'ok': True,
+                'mensagem': 'Mensagem enviada! Obrigado pelo contato, responderei em breve.'
+            })
+        except Exception as e:
+            print(f'\nErro ao enviar e-mail: {e}')
+            # Fallback: log no console
+
+    # Fallback: apenas loga no console
+    print(f'\n{"="*50}')
+    print(f'NOVO CONTATO (modo dev) — {datetime.now().strftime("%d/%m/%Y %H:%M")}')
+    print(f'{"="*50}')
     print(f'Nome:     {nome}')
     print(f'E-mail:   {email}')
     print(f'Assunto:  {assunto}')
     print(f'Mensagem: {mensagem}')
-    print(f'{'='*50}\n')
+    print(f'{"="*50}\n')
 
     return jsonify({
         'ok': True,

@@ -134,7 +134,65 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ============================================================
-    // 5. SCROLL SUAVE (fallback para navegadores sem scroll-behavior)
+    // 5. ANIMAÇÃO DOS CONTADORES (stats)
+    // ============================================================
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    if (statNumbers.length && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                if (isNaN(target) || el.classList.contains('animated')) return;
+                el.classList.add('animated');
+
+                let current = 0;
+                const step = Math.max(1, Math.floor(target / 30));
+                const timer = setInterval(function () {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = current;
+                }, 40);
+                obs.unobserve(el);
+            });
+        }, { threshold: .5 });
+        statNumbers.forEach(function (el) { obs.observe(el); });
+    }
+
+    // ============================================================
+    // 6. ANIMAÇÃO DAS SKILL BARS (ao scroll)
+    // ============================================================
+    const skillBars = document.querySelectorAll('.hab-bar-fill');
+    if (skillBars.length && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                const bar = entry.target;
+                if (bar.classList.contains('animated')) return;
+                bar.classList.add('animated');
+                // A largura já está definida pelo data-level no CSS
+                // Reaplica forçando o transition
+                const level = bar.getAttribute('data-level');
+                bar.style.width = level === 'estudando' ? '60%' : '30%';
+                obs.unobserve(bar);
+            });
+        }, { threshold: .3 });
+        skillBars.forEach(function (bar) {
+            // Começa com 0 para animar
+            bar.style.width = '0';
+            // Remove inline depois do primeiro render
+            requestAnimationFrame(function () {
+                bar.style.width = '0';
+                obs.observe(bar);
+            });
+        });
+    }
+
+    // ============================================================
+    // 7. SCROLL SUAVE (fallback para navegadores sem scroll-behavior)
     // ============================================================
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
