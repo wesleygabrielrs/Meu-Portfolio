@@ -36,10 +36,10 @@ informacoes_pessoais = {
         'meus conhecimentos, aprender com profissionais experientes '
         'e contribuir com projetos reais.'
     ),
-    'github': 'https://github.com/wesleygabriel',
-    'linkedin': 'https://linkedin.com/in/wesleygabriel',
-    'email': 'wesley@email.com',
-    'whatsapp': '5581999999999',
+    'github': 'https://github.com/wesleygabrielrs',
+    'linkedin': 'https://linkedin.com/in/wesleygabrielrs',
+    'email': 'wesleygabrielrs@gmail.com',
+    'whatsapp': '5581989337444',
 }
 
 projetos = [
