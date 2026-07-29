@@ -37,7 +37,7 @@ informacoes_pessoais = {
         'e contribuir com projetos reais.'
     ),
     'github': 'https://github.com/wesleygabrielrs',
-    'linkedin': 'https://linkedin.com/in/wesleygabrielrs',
+    'linkedin': 'https://www.linkedin.com/in/wesley-gabriel-2810aa277/',
     'email': 'wesleygabrielrs@gmail.com',
     'whatsapp': '5581989337444',
 }
@@ -53,7 +53,7 @@ projetos = [
             'de pedidos e suporte. HTML, CSS e JavaScript puro.'
         ),
         'tags': ['HTML', 'CSS', 'JavaScript', 'Web'],
-        'github': 'https://github.com/wesleygabriel/newmed-improved',
+        'github': 'https://github.com/wesleygabrielrs/Site-NewMed',
         'site': None,
         'status': 'concluido',
     },
