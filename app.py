@@ -61,12 +61,12 @@ projetos = [
         'id': 2,
         'titulo': 'Sistema de Estoque',
         'descricao': (
-            'Sistema de Estoque — aplicação web de controle de estoque desenvolvida em Python com Flask. Permite cadastrar, listar, editar e excluir produtos, com busca por nome, destaque de itens com estoque baixo e modo escuro. Os dados são persistidos em arquivo JSON. Projeto de estudo de Análise e Desenvolvimento de Sistemas (ADS), feito para praticar roupeamento com Flask, manipulação de arquivos JSON e as quatro operações do CRUD.'
+            'Sistema de Estoque — aplicação web de controle de estoque desenvolvida em Python com Flask. Permite cadastrar, listar, editar e excluir produtos, com busca por nome, destaque de itens com estoque baixo e modo escuro. Os dados são persistidos em arquivo JSON. Projeto de estudo de Análise e Desenvolvimento de Sistemas (ADS), feito para praticar roteamento com Flask, manipulação de arquivos JSON e as quatro operações do CRUD.'
         ),
         'tags': ['Python', 'Flask', 'Jinja2', 'HTML', 'CSS', 'JSON'],
         'github': 'https://github.com/wesleygabrielrs/Sistema-Estoque',
         'site': None,
-        'status': 'Concluído',
+        'status': 'concluido',
     },
     {
         'id': 3,
