@@ -59,17 +59,14 @@ projetos = [
     },
     {
         'id': 2,
-        'titulo': 'Em breve — App de Tarefas',
+        'titulo': 'Sistema de Estoque',
         'descricao': (
-            'Aplicação web com Flask para gerenciamento de tarefas. '
-            'CRUD completo, autenticação de usuários e banco de dados '
-            'SQLite. Projeto em desenvolvimento para praticar Python '
-            'com backend.'
+            'Sistema de Estoque — aplicação web de controle de estoque desenvolvida em Python com Flask. Permite cadastrar, listar, editar e excluir produtos, com busca por nome, destaque de itens com estoque baixo e modo escuro. Os dados são persistidos em arquivo JSON. Projeto de estudo de Análise e Desenvolvimento de Sistemas (ADS), feito para praticar roupeamento com Flask, manipulação de arquivos JSON e as quatro operações do CRUD.'
         ),
-        'tags': ['Python', 'Flask', 'SQL', 'Web'],
-        'github': None,
+        'tags': ['Python', 'Flask', 'Jinja2', 'HTML', 'CSS', 'JSON'],
+        'github': 'https://github.com/wesleygabrielrs/Sistema-Estoque',
         'site': None,
-        'status': 'em-breve',
+        'status': 'Concluído',
     },
     {
         'id': 3,
