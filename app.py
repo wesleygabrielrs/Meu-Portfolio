@@ -70,23 +70,21 @@ projetos = [
     },
     {
         'id': 3,
-        'titulo': 'Em breve — CLI Tools',
+        'titulo': 'Calendário Acadêmico',
         'descricao': (
-            'Coleção de ferramentas de linha de comando em Python '
-            'para automatizar tarefas do dia a dia. Projeto para '
-            'praticar Python puro, manipulação de arquivos e '
-            'boas práticas de CLI.'
+            'Sistema desenvolvido em **Python + Flask** para automatizar a organização acadêmica. A aplicação coleta aulas, provas, trabalhos e prazos diretamente do portal da UNINASSAU e   sincroniza os eventos automaticamente com o **Google Calendar**. Utiliza **SQLite**, OAuth 2.0 e Google Calendar API, com sincronização idempotente, detecção de AOLs e gerenciamento automático dos eventos.'
+
         ),
-        'tags': ['Python'],
-        'github': None,
+        'tags': ['Python','Flask','SQLite'],
+        'github': 'https://github.com/wesleygabrielrs/Sistema-Calendario-Academico',
         'site': None,
-        'status': 'em-breve',
+        'status': 'Concluido',
     },
 ]
 
 habilidades = [
-    {'nome': 'Python',     'nivel': 'Intermediário', 'icone': '🐍', 'pct': 70},
-    {'nome': 'Flask',      'nivel': 'Iniciante',     'icone': '🌶️', 'pct': 30},
+    {'nome': 'Python',     'nivel': 'Avançado', 'icone': '🐍', 'pct': 80},
+    {'nome': 'Flask',      'nivel': 'Intermediário',     'icone': '🌶️', 'pct': 50},
     {'nome': 'C#',         'nivel': 'Iniciante',     'icone': '🎨', 'pct': 30},
     {'nome': 'JavaScript', 'nivel': 'Iniciante',     'icone': '⚡', 'pct': 30},
     {'nome': 'Git',        'nivel': 'Avançado',      'icone': '🔄', 'pct': 80},
